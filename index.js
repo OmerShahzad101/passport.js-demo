@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+
+
 const port = 4000;
 const path = require("path");
 const logger = require("morgan")
@@ -11,7 +13,6 @@ const middleware = require("./middleware/auth");
 const moment = require('moment');
 const {errorLogger, errorResponder, invalidPathHandler} = require("./middleware/error");
 const user = require('./models/user.model')
-    
 
 // __ db connection __ //
 mongoose.connect('mongodb://localhost:27017/bootcamp',

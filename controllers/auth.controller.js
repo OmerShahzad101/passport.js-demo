@@ -72,7 +72,6 @@ exports.login = async (req, res, next) => {
 				(username, password, done) => {
 					User.findOne(
 						{ email: username },
-						// "name email phone type address roleId isEmailVerified image password",
 						(err, user) => {
 							if (err) return done(err);
 							else if (!user)
@@ -90,7 +89,6 @@ exports.login = async (req, res, next) => {
 							else return done(null, user);
 						}
 					);
-					// .populate({ path: "roleId", select: 'title' })
 				}
 			)
 		);
